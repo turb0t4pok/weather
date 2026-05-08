@@ -1,0 +1,74 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!src/**/build/
+
+# Gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+local.properties
+*.keystore
+*.jks
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.DS_Store
+
+# Kotlin
+*.class
+*.kotlin_module
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (для wasmJs/jsMain)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Compose Multiplatform
+**/xcuserdata/
+**/xcshareddata/
+*.xcworkspace/xcuserdata/
+
+# iOS
+iosApp/Pods/
+iosApp/.build/
+iosApp/DerivedData/
+*.ipa
+
+# Kotlin Native
+*.klib
+*.bc
+
+# Coverage reports
+*.exec
+*.ec
+reports/
+
+# Logs
+*.log
+
+# Environment / secrets
+*.env
+.env.local
+api_keys.properties
+secrets.properties
