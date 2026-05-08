@@ -4,7 +4,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.Modifier
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 actual fun SearchBar(
     value: String,
@@ -18,12 +18,6 @@ actual fun SearchBar(
         active = false,
         onActiveChange = {},
         modifier = Modifier.fillMaxWidth(),
-        placeholder = { Text("Поиск города") },
-        leadingIcon = {
-            Icon(
-                imageVector = androidx.compose.material.icons.Icons.Default.Search,
-                contentDescription = null
-            )
-        }
+        placeholder = { Text("Поиск города") }
     ) {}
 }

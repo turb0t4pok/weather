@@ -20,6 +20,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Grant execute permission
+        run: chmod +x gradlew
       - name: Build Android
         run: ./gradlew :androidApp:assembleDebug
       - name: Run Unit Tests
@@ -42,6 +44,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Grant execute permission
+        run: chmod +x gradlew
       - name: Build Desktop
         run: ./gradlew :desktopApp:packageDistributionForCurrentOS
 
@@ -57,6 +61,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Grant execute permission
+        run: chmod +x gradlew
       - name: Build Web
         run: ./gradlew :webApp:wasmJsBrowserDistribution
 
@@ -72,6 +78,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Grant execute permission
+        run: chmod +x gradlew
       - name: Build iOS Framework
         run: ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
 
@@ -87,6 +95,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Grant execute permission
+        run: chmod +x gradlew
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -98,4 +108,4 @@ jobs:
           api-level: 34
           target: google_apis
           arch: x86_64
-          script: cd weatherApp && ./gradlew :androidApp:connectedDebugAndroidTest
+          script: cd weatherApp && chmod +x gradlew && ./gradlew :androidApp:connectedDebugAndroidTest
